@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from pages.views import get_homepage_view
 from accounts.views import registerPageView, loginPageView, logoutUser, userProfileView, userProfileEdit
 from chat.views import  chatMessageView
@@ -28,3 +29,4 @@ urlpatterns = [
     path('login/', loginPageView, name='login'),   
     path('admin/', admin.site.urls, name='admin'),
 ]
+urlpatterns += staticfiles_urlpatterns()
