@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section class="home container">	
+		<div class="home__info">
+			<h1>
+				Онлайн школа программирования
+			</h1>
+			<div class="home__logo">
+				<p>HELLO</p>
+				<p>WORLD</p>
+				<p>SCHOOL</p>
+			</div>
+
+			<div class="home__subtitle">
+				<hr>
+				<h2 >Общий чат</h2>
+				<a href="{% url 'chat' %}">Начать</a>
+			</div>
+		</div>
+		<div class="home__bg">
+		</div>
+
+	</section>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% if request.user.is_authenticated %}
+<form method="POST" action="" class="form message-form">
+	{% csrf_token %}
+	<label>Ваше сообщение: </label>
+	<input type="text" required name="message">
+	
+	<button type="submit">Отправить сообщение</button>
+</form>
+{% endif %}

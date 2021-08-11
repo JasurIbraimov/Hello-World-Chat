@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<section class="userprofile container">
+	<h2>Привет, {{request.user}}!</h2>
+	<div class="userprofile__info">
+		<div class="userprofile__photo">
+			<img src="{% static 'images/user.svg'%}">
+		</div>
+		<a class="userprofile__edit" href="{% url 'edit' %}">&#9998;</a>	
+		<div class="userprofile__personal">
+			<p>Профиль: <span>{{ username }}</span></p>
+			<p>Email: <span>{{ email }}</span></p>
+			{% if request.user.is_staff %}
+				<p>
+					<a href="{% url 'admin:index' %}">Админ панель</a>
+				</p>
+			{% endif %}
+		</div>
+	</div>
+</section>
+{% endblock %}

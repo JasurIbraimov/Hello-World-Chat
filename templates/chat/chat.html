@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section class="chat container">
+		{% for message in messages %}
+				<p class="tip__message">{{message}}</p>
+			{% endfor %}	
+		<div class="chat__messages">
+			
+			{% include './send-message.html' %}	
+			<ul>
+				{% if object_list %}
+					{% for message in object_list %}
+						<li class="message">
+							<div class="message__send">
+								<div class="message__author">
+									<img src="{% static 'images/user.svg' %}">
+									<p>{{message.author}}</p>
+								</div>
+								<p class="message__send-time">{{message.send_date}}</p>
+							</div>
+							<div class="message__content">
+								<p>{{message.message}}</p>
+							</div>
+						</li>
+					{% endfor %}
+
+
+				{% else %}
+					<p class="message__empty">Пока сообщений нет...</p>	
+				{% endif %}
+
+				
+			</ul>
+		</div>
+	</section>
+
+{% endblock %}

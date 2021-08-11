@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+{% block sitetitle %}
+Вход в систему
+{% endblock %}
+{% block title %}
+	Войти
+{% endblock%}
+
+{% block content %}
+	<label>Имя пользователя:</label>
+	<input type="text" required name="username">
+	<label>Пароль:</label>	
+	<input type="password" required name="password">
+
+{% endblock %}
+
+{% block buttonlabel %} 
+	Войти
+{% endblock %}
+
+{% block messages %}
+	{% for message in messages %}
+		<p class="tip__message">{{message}}</p>
+	{% endfor %}
+
+{% endblock%}

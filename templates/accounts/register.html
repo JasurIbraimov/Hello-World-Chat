@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+{% block sitetitle %}
+Регистрация
+{% endblock %}
+{% block title %}
+	Присоединиться
+{% endblock%}
+
+{% block content %}
+	<label>{{form.email.label}}</label>	
+	{{form.email}}
+	{{form.errors.email}}			
+	<label>{{form.username.label}}</label>	
+	{{form.username}}
+	{{form.errors.username}}
+	<label>{{form.password1.label}}</label>	
+	{{form.password1}}
+	{{form.errors.password1}}	
+	<label>{{form.password2.label}}</label>	
+	{{form.password2}}
+	{{form.errors.password2}}
+	{% load static %}
+{% endblock %}
+
+{% block buttonlabel %} 
+	Регистрация
+{% endblock %}
+{% block messages %}
+	{% for message in messages %}
+		<p class="tip__message">{{message}}</p>
+	{% endfor %}
+
+{% endblock%}

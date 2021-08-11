@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+{% block sitetitle %}
+	Изменение профиля
+{% endblock %}
+
+{% block title %}
+	Изменить данные
+{% endblock%}
+
+{% block content %}
+	<label>{{form.email.label}}</label>	
+	{{form.email}}
+	{{form.errors.email}}			
+	<label>{{form.username.label}}</label>	
+	{{form.username}}
+	{{form.errors.username}}
+	<label>{{form.userphoto.label}}</label>	
+	{{form.userphoto}}
+{% endblock %}
+
+{% block buttonlabel %} 
+	Сохранить
+{% endblock %}
+{% block messages %}
+	{% for message in messages %}
+		<p class="form__message">{{message}}</p>
+	{% endfor %}
+
+{% endblock%}
